@@ -39,9 +39,8 @@ def generate_nested_loops(letter, depth, alphabet, SHA_256, current_combination=
 # Пример использования
 start_time = time.time()
 alphabet = string.ascii_lowercase + "".join(list(map(str, range(0, 10))))
-letters = 4
-SHA = "5f2d5d6090830b8e3398d2bfb586d64a01aff9c45cc4c147c8c10fc176384ff8"
-
+letters = 5
+SHA = "1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad"
 #количество потоков
 count = 4
 
@@ -61,7 +60,7 @@ result = split_and_return_first(alphabet, 4)
 global stop
 stop = 0
 threads = []
-print(result)
+
 try:
     for i in range(len(result)):
         letter = result[i]
