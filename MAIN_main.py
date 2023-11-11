@@ -40,7 +40,8 @@ def generate_nested_loops(letter, depth, alphabet, SHA_256, current_combination=
 start_time = time.time()
 alphabet = string.ascii_lowercase + "".join(list(map(str, range(0, 10))))
 letters = 5
-SHA = "1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad"
+SHA = "24314a1e203e282ca48e5ce8e0cd517ffe44547bfad29252cf707212a1ce5789"
+
 #количество потоков
 count = 4
 
@@ -60,11 +61,10 @@ result = split_and_return_first(alphabet, 4)
 global stop
 stop = 0
 threads = []
-
+print(result)
 try:
     for i in range(len(result)):
         letter = result[i]
-        exit_flag = threading.Event()
         thread = threading.Thread(target=generate_nested_loops, args=(letter, letters, alphabet, SHA))
         threads.append(thread)
         thread.start()
